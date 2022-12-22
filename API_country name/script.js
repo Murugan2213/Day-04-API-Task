@@ -1,0 +1,12 @@
+
+var request = new XMLHttpRequest();
+request.open("GET","https://restcountries.com/v3.1/all");
+request.send();
+request.onload = function(){
+  var data = request.response;
+  var result = JSON.parse(data);
+
+  for(var i = 0; i < result.length; i++) {
+        console.log("Name:" + result[i].name.common + "   Region:" + result[i].region + "   Sub-Region:"  + result[i].subregion + "   Population:"  + result[i].population);
+  };
+  };
